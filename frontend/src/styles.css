@@ -1,1 +1,32 @@
 /* You can add global styles to this file, and also import other style files */
+.navbar {
+    padding: .6rem 1rem!important;
+    background-color: #195bb6!important;
+}
+.navbar-brand {
+    color: #fff!important;
+    font-size: 1.7rem!important;
+    font-family: 'Trochut', cursive;
+    text-shadow: 2px 1px 1px #000;
+}
+.form-control {
+    border: none!important;
+    border-radius: 0!important;
+    box-shadow: none!important;
+    border-bottom: 1px solid #ced4da!important;
+}
+.form-control:focus {
+    border-bottom: 1px solid #195bb6!important;
+    box-shadow: 0 1px 0 0 #195bb6!important;
+}
+.form-group label {
+    position: absolute;
+    top: 0;
+    
+    font-size: 1rem;
+    transition: transform .2s ease-out,color .2s ease-out;
+    transform-origin: 0 100%;
+    transform: translateY(12px);
+    cursor: text;
+    color: #757575;
+}

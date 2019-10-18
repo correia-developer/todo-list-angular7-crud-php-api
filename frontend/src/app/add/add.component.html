@@ -1,0 +1,19 @@
+<div class="row justify-content-center mt-5">
+  <div class="col-md-6">
+    <form [formGroup]="addTodo">
+        <div class="form-group">
+          <input type="todo" formControlName="todo" id="todo" class="form-control" [ngClass]="{'is-invalid': addTodo.get('todo').hasError('required') && addTodo.get('todo').touched}" placeholder="Todo">
+          <div class="invalid-feedback" *ngIf="addTodo.get('todo').hasError('required') && addTodo.get('todo').touched">
+            Please todo is required
+          </div>
+        </div>
+        <button (click)="onSave()" [disabled]="addTodo.invalid" class="btn btn-outline-primary">Add</button>
+    </form>
+
+    <div class="mt-4">
+      <app-view></app-view>
+    </div>
+  </div>
+
+
+</div>
