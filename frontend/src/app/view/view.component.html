@@ -1,7 +1,7 @@
 <table class="table">
   <tr *ngFor="let todo of todos">
     <td>{{ todo.todo }}</td>
-    <td><a href="" class="btn btn-sm" [ngClass]="{'btn-success': todo.completed == 1}">Completed</a></td>
+    <td><a href="" class="btn btn-sm" [ngClass]="{'btn-success': todo.completed == 1, 'btn-dark': todo.completed == 0}">Completed</a></td>
     <td><a class="btn btn-warning btn-sm" ><i class="fa fa-pencil"></i></a></td>
     <td><a class="btn btn-danger btn-sm"><i class="fa fa-trash"></i></a></td>
   </tr>

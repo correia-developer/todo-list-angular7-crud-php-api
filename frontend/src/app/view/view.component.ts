@@ -19,7 +19,6 @@ export class ViewComponent implements OnInit {
     this.todoService.getTodos()
     .subscribe((data: Todo[]) => {
       this.todos = data;
-      
     });
 
     
