@@ -11,6 +11,7 @@ import { Todo } from './../todo';
 export class ViewComponent implements OnInit {
 
   todos: Todo[];
+  id: any;
 
   constructor(private todoService: TodoService) { }
 
@@ -21,6 +22,14 @@ export class ViewComponent implements OnInit {
       this.todos = data;
     });
   
+  }
+
+  // Delete
+  delete(todo: Todo): void {
+    //console.log(todo.id);
+    this.todoService.deleteTodo(todo.id).subscribe(data => {
+      this.todos = this.todos.filter(u => u !== todo)
+    });
   }
 
 }
