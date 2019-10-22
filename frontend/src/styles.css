@@ -30,3 +30,7 @@
     cursor: text;
     color: #757575;
 }
+ 
+.btn i {
+    color: rgba(255, 255, 255, 0.7);
+}

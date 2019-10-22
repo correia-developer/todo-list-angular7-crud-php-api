@@ -20,9 +20,7 @@ export class ViewComponent implements OnInit {
     .subscribe((data: Todo[]) => {
       this.todos = data;
     });
-
-    
-
+  
   }
 
 }

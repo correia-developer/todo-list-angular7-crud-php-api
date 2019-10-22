@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
+
+import { TodoService } from './../todo.service';
 
 @Component({
   selector: 'app-add',
@@ -9,7 +12,9 @@ import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 export class AddComponent implements OnInit {
 
   addTodo: FormGroup;
-  constructor(private formBuilder: FormBuilder) { }
+  constructor(private todoService: TodoService,
+              private formBuilder: FormBuilder,
+              private router: Router) { }
 
 
   ngOnInit() {
@@ -20,7 +25,12 @@ export class AddComponent implements OnInit {
 
 
   onSave() {
-    console.log(this.addTodo.value);
+    //console.log(this.addTodo.value);
+    this.todoService.createTodo(this.addTodo.value)
+    .subscribe(data => {
+      this.router.navigate(['/view']);
+    });
+    
   }
 
 }

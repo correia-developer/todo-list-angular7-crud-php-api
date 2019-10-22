@@ -16,10 +16,10 @@ if (isset($data) && !empty($data)) {
 
     // Sanitize
     $todo       = mysqli_real_escape_string($con, trim($request['todo']));
-    $completed  = mysqli_real_escape_string($con, trim($request['completed']));
+    //$completed  = mysqli_real_escape_string($con, trim($request['completed']));
 
     // Insert
-    $sql = "INSERT INTO todos (todo,completed) values ('".$todo."', '".$completed."')";
+    $sql = "INSERT INTO todos (todo) values ('".$todo."')";
 
     // Check 
     if (mysqli_query($con, $sql)) {
